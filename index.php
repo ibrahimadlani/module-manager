@@ -25,9 +25,33 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+      <div class="">
+        <h2 style="margin-bottom:0px;">Module Manager</h2>
+        <p>Emploie du temps des deuxièmes années en formation initial de l'<a href="http://www.uphf.fr">Université Polytechnique des Hauts-de-France</a>.</p>
+        <table class="u-full-width">
+            <thead>
+                <tr>
+                <th>Créneaux</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>8:00</td>
+                <td>26</td>
+                <td>Male</td>
+                <td>San Francisco</td>
+                </tr>
+                <tr>
+                <td>9:30</td>
+                <td>42</td>
+                <td>Male</td>
+                <td>Hayward</td>
+                </tr>
+            </tbody>
+        </table>
       </div>
     </div>
   </div>

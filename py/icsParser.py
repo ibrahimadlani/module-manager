@@ -4,7 +4,14 @@ with open('./input/edt.ics', 'r') as file:
     edt = file.read()
 
 
-c = Calendar(edt)
-decalageUTC = 0
+decalageUTC = 2
+edt = Calendar(edt).events
 
-print(c.events[30].name)
+def getDay(d,m,y):
+    dayEvents = []
+    for e in edt:
+        if e.begin.day == d and e.begin.month == m and e.begin.year == y :
+            dayEvents.append(e)
+    return dayEvents
+
+    
