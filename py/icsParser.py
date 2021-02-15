@@ -19,6 +19,8 @@ def getDay(d, m, y):
     return dayEvents
 
 
+
+
 def setDayJson(d, m, y):
     dayEvents = getDay(d, m, y)
     dayObject = []
@@ -49,3 +51,8 @@ def setDayJson(d, m, y):
 
 setDayJson(11, 2, 2021)
 
+
+
+
+utc = arrow.utcnow().to('Europe/Paris')
+print(utc)
