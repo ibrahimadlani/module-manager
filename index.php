@@ -1,26 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <title>Module Manager</title>
   <meta name="description" content="">
   <meta name="author" content="Ibrahim ADLANI">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/master.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
-
 </head>
 <body>
   <div class="container">
@@ -31,29 +21,29 @@
         <table class="u-full-width">
             <thead>
                 <tr>
-                <th>Créneaux</th>
-                <th>Age</th>
-                <th>Sex</th>
-                <th>Location</th>
+                  <th>Créneaux</th>
+                  <th>Type</th>
+                  <th>Nom</th>
+                  <th>Module</th>
+                  <th>Professeur</th>
+                  <th>Commentaire</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                <td>8:00</td>
-                <td>26</td>
-                <td>Male</td>
-                <td>San Francisco</td>
-                </tr>
-                <tr>
-                <td>9:30</td>
-                <td>42</td>
-                <td>Male</td>
-                <td>Hayward</td>
-                </tr>
+            <tbody id="tablebody">
+                
             </tbody>
         </table>
       </div>
     </div>
   </div>
+  <?php 
+  $d =  date('j');
+  $m =  date('n');
+  $y =  date('Y');
+
+  $fileContent = file_get_contents("data/".$d."-".$m."-".$y.".json");
+  ?>
+  <script>var json = '<?php echo $fileContent; ?>';</script>
+  <script src="js/script.js"></script>
 </body>
 </html>
