@@ -1,14 +1,23 @@
 [
     {
         "type": "TD",
+        "module": "4102",
+        "nom": "PROGRAMMATION REPARTIE",
+        "prof": "PETIT DORIAN",
+        "debut": "8:00:00",
+        "fin": "9:30:00",
+        "duree": "1:30:00",
+        "exam": ""
+    },
+    {
+        "type": "TD",
         "module": "4203",
         "nom": "EXPRESSION-COMMUNICATION \u00e2\u20ac\u201c COMMUNIQUER DANS LES ORGANISATIONS",
-        "prof": "TISSERAND ANNE-SOPHIE",
-        "debut": "8:00:00",
+        "prof": "GUEUDET CAROLE",
+        "debut": "9:30:00",
         "fin": "11:00:00",
-        "duree": "3:00:00",
-        "exam": "",
-        "moodle": "https://moodle.uphf.fr/course/view.php?id=1614"
+        "duree": "1:30:00",
+        "exam": ""
     },
     {
         "type": "TD",
@@ -18,18 +27,16 @@
         "debut": "11:00:00",
         "fin": "12:30:00",
         "duree": "1:30:00",
-        "exam": "",
-        "moodle": "https://moodle.uphf.fr/course/view.php?id=1614"
+        "exam": ""
     },
     {
-        "type": "TD",
-        "module": "4203",
-        "nom": "EXPRESSION-COMMUNICATION \u00e2\u20ac\u201c COMMUNIQUER DANS LES ORGANISATIONS",
-        "prof": "GUEUDET CAROLE",
+        "type": "CM",
+        "module": "4102",
+        "nom": "PROGRAMMATION REPARTIE",
+        "prof": "PETIT DORIAN",
         "debut": "14:00:00",
         "fin": "15:30:00",
         "duree": "1:30:00",
-        "exam": "",
-        "moodle": "https://moodle.uphf.fr/course/view.php?id=1614"
+        "exam": "+DS"
     }
 ]

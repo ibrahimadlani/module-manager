@@ -26,32 +26,71 @@ def getDay(d, m, y):
 def getType(event):
     texte = event.description
     result = re.search('\)-(.*)\n', texte)
-    return result.group(1)
+
+    if result is None:
+        return ""
+    else:
+        return result.group(1)
 
 def getProf(event):
     texte = event.description
     result = re.search('Prof : (.*)\n', texte)
-    return result.group(1)
+    if result is None:
+        return ""
+    else:
+        return result.group(1)
 
 def getNom(event):
     texte = event.description
     result = re.search('-(.*)  \(', texte)
-    return result.group(1)
+    if result is None:
+        return ""
+    else:
+        return result.group(1)
 
 def getModule(event):
     texte = event.description
     result = re.search(' \((.*)\)-', texte)
-    module = result.group(1)[1]+result.group(1)[3]+"0"+result.group(1)[4]
-    return module
+    
+    if result is None:
+        return ""
+    else:
+        module = result.group(1)[1]+result.group(1)[3]+"0"+result.group(1)[4]
+        return module
+    
 
 def getDs(event):
     texte = event.description
     if("Commentaire" in texte):
         result = re.search('Commentaire : (.*)\n', texte)
-        return result.group(1)
+        if result is None:
+            return ""
+        else:
+            return result.group(1)
     else:
         return ""
 
+
+def getMoodle(module):
+    moodles = {
+  "4101": "https://moodle.uphf.fr/course/view.php?id=1032",
+  "4102": "",
+  "4103": "https://moodle.uphf.fr/course/view.php?id=1359",
+  "4104": "https://moodle.uphf.fr/course/view.php?id=1824",
+  "4105": "https://moodle.uphf.fr/course/view.php?id=388",
+  "4106": "https://moodle.uphf.fr/course/view.php?id=853",
+  "4201": "https://moodle.uphf.fr/course/view.php?id=1049",
+  "4202": "https://moodle.uphf.fr/course/view.php?id=1044",
+  "4203": "https://moodle.uphf.fr/course/view.php?id=1614",
+  "4204": "",
+  "4205": "",
+  "4206": "",
+}
+    if module == "":
+        return ""
+    else:
+         return moodles[module]
+   
 
 def setDayJson(d, m, y):
     dayEvents = getDay(d, m, y)
@@ -67,10 +106,11 @@ def setDayJson(d, m, y):
         event['fin'] = str(i.end.shift(hours=+1).format("H:mm:ss"))
         event['duree'] = str(i.duration)
         event['exam'] = getDs(i)
+        event['moodle'] = getMoodle(getModule(i))
         dayObject.append(event)
    
     with open('./data/'+str(d)+"-"+str(m)+"-"+str(y)+'.json', 'w') as outfile:
         json.dump(dayObject, outfile)
 
 
-setDayJson(joursAJD, moisAJD, annéeAJD)
+setDayJson(25, 2, 2021)

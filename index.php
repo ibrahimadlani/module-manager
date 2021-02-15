@@ -9,6 +9,7 @@
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/master.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
@@ -39,6 +40,9 @@
   $d =  date('j');
   $m =  date('n');
   $y =  date('Y');
+  $d =  11;
+  $m =  2;
+  $y =  2021;
 
   $fileContent = file_get_contents("data/".$d."-".$m."-".$y.".json");
   ?>

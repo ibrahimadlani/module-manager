@@ -23,7 +23,10 @@ day.forEach(events => {
     tr.appendChild(c);
 
     var d = document.createElement("td")
-    d.innerText = events.module;
+    var d1 = document.createElement("a")
+    d1.href = events.moodle;
+    d1.innerText = events.module;
+    d.appendChild(d1);
     tr.appendChild(d);
 
     var e = document.createElement("td")
@@ -36,10 +39,10 @@ day.forEach(events => {
 
     if(events.debut < n && events.fin > n){
         tr.classList = ["cours"];
-    }else if (events.debut > n) {
+    }else if (events.debut > n && events.fin > n) {
         tr.classList = ["attente"];
     }else if (events.fin < n) {
         tr.classList = ["fini"];
-    } 
+    }  
     container.appendChild(tr);
 });
